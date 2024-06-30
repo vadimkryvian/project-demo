@@ -95,10 +95,11 @@ def newpipe():
         models=[{"key": f"{DATASET}:v1", "model_path": train.outputs["model"]}],
     )
 
+    # TODO: Add the following function once v2-model-tester is fixed
     # test out new model server (via REST API calls), use imported function
-    run_function(
-        "hub://v2-model-tester",
-        name="model-tester",
-        params={"addr": deploy.outputs["endpoint"], "model": f"{DATASET}:v1"},
-        inputs={"table": train.outputs["test_set"]},
-    )
+    # run_function(
+    #     "hub://v2-model-tester",
+    #     name="model-tester",
+    #     params={"addr": deploy.outputs["endpoint"], "model": f"{DATASET}:v1"},
+    #     inputs={"table": train.outputs["test_set"]},
+    # )
